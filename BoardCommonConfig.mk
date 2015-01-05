@@ -94,7 +94,11 @@ EXTENDED_FONT_FOOTPRINT := true
 # Logging
 TARGET_USES_LOGD := false
 
+# MMAP
 BOARD_USES_LEGACY_MMAP := true
+
+# GPS
+TARGET_ENABLE_NON_PIE_SUPPORT := true
 
 # OMX
 BOARD_USE_SAMSUNG_COLORFORMAT := true
@@ -135,10 +139,12 @@ WIFI_DRIVER_MODULE_ARG           := "firmware_path=/system/etc/wifi/bcmdhd_sta.b
 WIFI_DRIVER_MODULE_AP_ARG        := "firmware_path=/system/etc/wifi/bcmdhd_apsta.bin nvram_path=/system/etc/wifi/nvram_net.txt"
 WIFI_BAND                        := 802_11_ABG
 BOARD_HAVE_SAMSUNG_WIFI          := true
+BOARD_NO_WIFI_HAL                := false
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
+BOARD_HAVE_SAMSUNG_BLUETOOTH := true
 BOARD_BLUEDROID_VENDOR_CONF := device/samsung/galaxys2-common/bluetooth/vnd_smdk4210.txt
 
 # Vold
@@ -183,6 +189,7 @@ BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charg
 BOARD_BATTERY_DEVICE_NAME := "battery"
 BOARD_CHARGER_RES := device/samsung/galaxys2-common/res/charger
 
+BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/galaxys2-common/shbootimg.mk
 
 # Override healthd HAL
